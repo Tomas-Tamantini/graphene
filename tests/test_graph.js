@@ -24,7 +24,7 @@ it("should account for all nodes", function () {
   n2 = { id: 2 }
   e = new Edge(n1, n2)
   nodes = [n1]
-  edges = [e1]
+  edges = [e1] // n2 should be accounted for because it is in e1
   g = new Graph(nodes, edges)
   assert(g.numEdges === 1 && g.numNodes === 2)
 })
