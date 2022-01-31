@@ -1,6 +1,6 @@
 it("should reject duplicate nodes", function () {
   n1 = { id: 1 }
-  n2 = { id: 2 }
+  n2 = { id: 1 }
   nodes = [n1, n2]
   assertRaisesError(() => {
     g = new Graph(nodes)
