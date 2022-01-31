@@ -14,3 +14,12 @@ function assert(condition) {
     throw new Error()
   }
 }
+
+function assertRaisesError(method) {
+  try {
+    method()
+  } catch (e) {
+    return
+  }
+  throw new Error("Did not raise exception")
+}
