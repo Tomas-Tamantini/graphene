@@ -16,6 +16,7 @@ class Graph {
   }
 
   #mapEdges(edges, allNodes) {
+    if (!edges) return []
     const e = []
     for (let i = 0; i < edges.length; i++) {
       let newEdge = edges[i]
@@ -27,6 +28,7 @@ class Graph {
   }
 
   #mapNodes(nodes) {
+    if (!nodes) return {}
     let allNodes = {}
     for (let node of nodes) {
       if (node.id in allNodes) throw new Error(`Duplicate node id: ${node.id}`)
