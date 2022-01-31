@@ -1,9 +1,9 @@
 class Node {
   #id
   #label
-  constructor(id, label = "") {
+  constructor(id, label) {
     this.#id = id
-    this.#label = label
+    this.#label = label ? label : ""
   }
 
   get id() {
