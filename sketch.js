@@ -1,9 +1,8 @@
 let graph, animation
 
 function preload() {
-  let path = "./examples/simple_graph.json"
-  let data = loadJSON(path)
-  graph = parseGraph(data)
+  let path = "examples/simple_graph.json"
+  loadJSON(path, (data) => (graph = parseGraph(data)))
 }
 
 function setup() {
@@ -12,7 +11,8 @@ function setup() {
 }
 
 function draw() {
-  // drawGraph(graph)
+  // if (graph) drawGraph(graph)
+  // noLoop()
   animation.draw()
   animation.step()
 }
