@@ -1,0 +1,7 @@
+{
+  "edges": [
+    { "sourceId": "A", "targetId": "B" },
+    { "sourceId": "A", "targetId": "C" },
+    { "sourceId": "A", "targetId": "D" }
+  ]
+}
