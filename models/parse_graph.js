@@ -21,8 +21,8 @@ function parseEdges(edgesInput) {
 function parseEdge(edgeInput) {
   if (!edgeInput.sourceId || !edgeInput.targetId)
     throw new Error("Edge should have a sourceId and targetId key")
-  const n1 = { id: edgeInput.sourceId }
-  const n2 = { id: edgeInput.targetId }
+  const n1 = new Node(edgeInput.sourceId)
+  const n2 = new Node(edgeInput.targetId)
   return new Edge(n1, n2, edgeInput.label)
 }
 
