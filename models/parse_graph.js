@@ -28,9 +28,7 @@ function parseEdge(edgeInput) {
 
 function parseNode(nodeInput) {
   if (!nodeInput.id) throw new Error("Node should have an id key")
-  let x = nodeInput.x || getRandomCoordinate()
-  let y = nodeInput.y || getRandomCoordinate()
+  let x = nodeInput.x
+  let y = nodeInput.y
   return new Node(nodeInput.id, nodeInput.label, new Vector(x, y))
 }
-
-getRandomCoordinate = () => Math.random() * 50 + 25

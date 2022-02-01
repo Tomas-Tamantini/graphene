@@ -5,7 +5,7 @@ class Node {
   constructor(id, label, position) {
     this.#id = id
     this.#label = typeof label === "string" ? label : String(this.#id)
-    this.#pos = position || new Vector()
+    this.#pos = position || this.#randomPosition()
   }
 
   get id() {
@@ -22,5 +22,16 @@ class Node {
 
   get y() {
     return this.#pos.y
+  }
+
+  #randomPosition() {
+    const x = this.#randomCoordinate()
+    const y = this.#randomCoordinate()
+    return new Vector(x, y)
+  }
+
+  #randomCoordinate() {
+    const padding = 25
+    return Math.random() * (100 - 2 * padding) + padding
   }
 }
