@@ -15,6 +15,14 @@ class Graph {
     return this.#edges.length
   }
 
+  get edges() {
+    return this.#edges
+  }
+
+  get nodes() {
+    return this.#nodes
+  }
+
   #mapEdges(edges, allNodes) {
     if (!edges) return []
     const e = []
