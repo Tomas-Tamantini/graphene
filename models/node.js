@@ -1,9 +1,11 @@
 class Node {
   #id
   #label
-  constructor(id, label) {
+  #pos
+  constructor(id, label, position) {
     this.#id = id
     this.#label = typeof label === "string" ? label : String(this.#id)
+    this.#pos = position || new Vector()
   }
 
   get id() {
@@ -12,5 +14,13 @@ class Node {
 
   get label() {
     return this.#label
+  }
+
+  get x() {
+    return this.#pos.x
+  }
+
+  get y() {
+    return this.#pos.y
   }
 }
