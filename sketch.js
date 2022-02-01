@@ -1,12 +1,18 @@
+let graph, animation
+
+function preload() {
+  let path = "./examples/simple_graph.json"
+  let data = loadJSON(path)
+  graph = parseGraph(data)
+}
+
 function setup() {
   createCanvas(400, 400)
+  animation = new SoothingAnimation()
 }
 
 function draw() {
-  if (mouseIsPressed) {
-    fill(0)
-  } else {
-    fill(255)
-  }
-  ellipse(mouseX, mouseY, 80, 80)
+  // drawGraph(graph)
+  animation.draw()
+  animation.step()
 }
